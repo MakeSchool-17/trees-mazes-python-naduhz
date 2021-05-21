@@ -81,7 +81,7 @@ class Maze:
     def connect_cells(self, from_cell, to_cell, compass_index):
         # Update walls of from_cell and to_cell (to knockdown)
         self.maze_array[from_cell] |= WALLS[compass_index]
-        self.maze_array[from_cell] |= OPPOSITE_WALLS[compass_index]
+        self.maze_array[to_cell] |= OPPOSITE_WALLS[compass_index]
         self.draw_connect_cells(from_cell, compass_index)
 
     # Visit a cell along a possible solution path
