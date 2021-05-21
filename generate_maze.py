@@ -4,6 +4,9 @@ import maze
 # Create maze using Pre-Order DFS maze creation algorithm
 def create_dfs(m):
     # TODO: Implement create_dfs
+    # Create a stack for backtracking
+    stack = []
+    # Choose a cell index at random from the grid to be current cell
     pass
 
 

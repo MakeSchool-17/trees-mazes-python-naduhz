@@ -88,3 +88,5 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
+# Virtual environment
+venv/
