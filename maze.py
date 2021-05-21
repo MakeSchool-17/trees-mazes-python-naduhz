@@ -164,8 +164,17 @@ class Maze:
     # Use DIRECTION to return cardinal directions representing solution path
     def solution_array(self):
         solution = []
+        current_cell = 0
+        while current_cell != (self.total_cells - 1):
+            x, y = self.x_y(current_cell)
+            solution_bit = ((self.maze_array[current_cell] & SOLUTION_BITS) >> 8)
+            direction_index = WALLS.index(solution_bit)
 
-        # TODO: Logic to return cardinal directions representing solution path
+            new_x = x + COMPASS[direction_index][0]
+            new_y = y + COMPASS[direction_index][1]
+            new_cell_index = self.cell_index(new_x, new_y)
+            solution.append(DIRECTION[direction_index])
+            current_cell = new_cell_index
 
         return solution
 
